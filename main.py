@@ -125,7 +125,7 @@ def handle_weather_callback(call):
                         temperature = forecast["main"]["temp"]
                         weather_code = forecast["weather"][0]["main"]
                         weather_description = weather_translations.get(weather_code, "Неизвестно")
-                        forecast_text += f"{time}: {temperature}°C, {weather_description}\n\n"
+                        forecast_text += f"{time}: {temperature}°C, {weather_description}\n"
                     bot.send_message(call.message.chat.id, forecast_text)
                 else:
                     bot.send_message(call.message.chat.id, "Прогноз не найден.")
@@ -149,7 +149,7 @@ def handle_weather_callback(call):
                     temperature = forecast["main"]["temp"]
                     weather_code = forecast["weather"][0]["main"]
                     weather_description = weather_translations.get(weather_code, "Неизвестно")
-                    forecast_text += f"{time}: {temperature}°C, {weather_description}\n\n"
+                    forecast_text += f"{time}: {temperature}°C, {weather_description}\n"
                 bot.send_message(call.message.chat.id, forecast_text)
             else:
                 bot.send_message(call.message.chat.id, "Прогноз не найден.")
